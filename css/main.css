@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --link-animation-color: #0b75ff;
+    --shadow-color: rgba(7, 1, 19, 0.5);
+    --background-color: #F9F9F9;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: white;
+    overflow-x: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    width: 100%;
+    box-shadow: 0 0 5px var(--shadow-color);
+    z-index: 99;
+}
+
+.logo {
+    margin-left: 4vw;
+}
+
+.logo img {
+    width: 50px;
+    margin: 5px 0;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navlinks a {
+    text-decoration: none;
+    margin: 0 2vw;
+    padding: 10px 0.5vw;
+    color: black;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+}
+
+.navlinks a:hover {
+    color: var(--link-animation-color);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.theme {
+    position: relative;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.theme-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: var(--shadow-color) url('../img/ps5c.jpg') no-repeat center center/cover;
+}
+
+.theme-video:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.theme-video video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.theme-text {
+    z-index: 10;
+    text-align: center;
+}
+
+.theme-text h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: white;
+    margin-top: 80px;
+}
+
+.theme-text .button {
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-weight: 300;
+    padding: 10px 20px;
+    border: var(--link-animation-color) 2px solid;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.theme-text .button:hover {
+    background-color: var(--link-animation-color);
+}
+
+#specs h1,
+#games h1,
+#accessories h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 500;
+}
+
+#games h1,
+#accessories h1 {
+    padding-bottom: 90px;
+}
+
+.specs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    margin: 0 8vw;
+}
+
+.spec-info {
+    position: relative;
+    text-align: center;
+    border-radius: 20px;
+    margin: 3% 30px;
+    padding: 0 40px;
+    max-width: 400px;
+    max-height: 350px;
+    transform: scale(1);
+    transition: 0.1s ease-in-out;
+}
+
+.spec-info:hover {
+    transform: scale(1.1);
+}
+
+.spec-info img {
+    width: 50px;
+}
+
+.spec-info h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 400;
+    padding-top: 30px;
+}
+
+.spec-info p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 300;
+}
+
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 10vw;
+}
+
+.game-covers {
+    max-width: 500px;
+    height: 55vh;
+    margin: 0 3% 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.coverphoto,
+.backgroundvideo {
+    max-width: 100%;
+}
+
+.backgroundvideo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.backgroundvideo:hover {
+    opacity: 1;
+    transform: scale(2);
+}
+
+.game-info {
+    margin: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.game-text h3,
+.game-text h5 {
+    padding: 5px 0;
+}
+
+.game-text h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+}
+
+.game-text h5 {
+    font-size: clamp(0.9rem, 1.7vw, 1rem);
+    font-weight: 400;
+}
+
+.game-text p {
+    font-size: clamp(0.9rem, 1.7vw, 1rem);
+    font-weight: 300;
+}
+
+.game-info a {
+    text-decoration: none;
+    color: var(--link-animation-color);
+    border: var(--link-animation-color) 2px solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 5%;
+    display: inline-block;
+}
+
+.breakpoint {
+    height: 50vh;
+    background-image: url('../img/background.jpg'), radial-gradient(rgb(206, 206, 206), rgb(34, 34, 34));
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+#accessories h1 {
+    padding-bottom: 0;
+}
+
+.accessories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.accessory-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3% 30px;
+    max-width: 1500px;
+    height: 45vh;
+    position: relative;
+}
+
+.controller,
+.remote {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.headset,
+.camera {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.accessoryphoto {
+    max-height: 70%;
+    max-width: 100%;
+}
+
+.accessory-info {
+    max-width: 500px;
+    height: 180px;
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.accessory-info h3 {
+    font-weight: 400;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.accessory-info p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 300;
+}
+
+.accessory-info a {
+    text-decoration: none;
+    color: var(--link-animation-color);
+    border: var(--link-animation-color) 2px solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+footer {
+    background-color: rgb(0, 55, 145)
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 10%;
+    max-height: 600px;
+}
+
+.external-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 50px 0;
+}
+
+.column1,
+.column2 {
+    list-style: none;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    font-weight: 300;
+    padding: 10px;
+}
+
+.column1 a,
+.column2 a {
+    text-decoration: none;
+    color: #F9F9F9;
+}
+
+.column1 li,
+.column2 li {
+    padding: 4% 0;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.socials img {
+    width: 37px;
+    padding: 5px;
+    transform: scale(1);
+    transition: all 0.15s ease-in-out;
+}
+
+.socials img:hover {
+    transform: scale(1.2);
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    color: #F9F9F9;
+    font-weight: 100;
+    font-size: .85rem;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 1500px) {
+    .socials {
+        width: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .spec-info {
+        margin: 5% 20px;
+        padding: 0;
+    }
+
+    .accessory-card {
+        max-width: 500px;
+        height: 55vh;
+        margin: 0 3% 3%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: center;
+        position: relative;
+    }
+
+    .links {
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 700px) {
+    .spec-info {
+        margin: 8% 10px;
+        padding: 0;
+    }
+
+    #accessories h1 {
+        padding-bottom: 90px;
+    }
+
+    .accessory-info {
+        padding-top: 10%;
+    }
+    .links {
+        margin: 0 10px;
+    }
+
+    .column1,
+    .column2 {
+        padding: 10px 0;
+    }
+
+    .socials {
+        padding: 0;
+    }
+}
