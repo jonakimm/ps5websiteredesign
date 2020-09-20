@@ -200,7 +200,7 @@ h1 {
 
 .game-covers {
     max-width: 500px;
-    max-height: 80vh;
+    max-height: 2000px;
     margin: 0 3% 3%;
     display: flex;
     flex-direction: column;
@@ -430,10 +430,13 @@ footer {
         padding: 0;
     }
 
+    #accessories h1 {
+        margin-bottom: 80px;
+    }
+
     .accessory-card {
         max-width: 330px;
-        max-height: 2000px;
-        margin: 0 3% 3%;
+        height: 450px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -449,14 +452,16 @@ footer {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .spec-info {
         margin: 8% 10px;
         padding: 0;
     }
 
-    #accessories h1 {
-        padding-bottom: 90px;
+    .accessory-card {
+        max-width: 200px;
+        height: 350px;
+        margin-bottom: 30px;
     }
 
     .accessory-info {
